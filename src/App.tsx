@@ -9,6 +9,7 @@ import {
   SharedLayout,
   LandingPage,
 } from './pages'
+import { loader as loginLoader } from './pages/LoginPage'
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,7 @@ const router = createBrowserRouter([
       },
       {
         path: 'login',
+        loader: loginLoader,
         element: <LoginPage />,
       },
 

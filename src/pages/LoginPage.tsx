@@ -1,39 +1,48 @@
+import { InputFormRow } from '../components'
+import { useDispatch, useSelector } from 'react-redux'
+import { login } from '../features/auth/authThunk'
+import { AppDispatch, IRootState } from '../store'
+import Loading from '../components/Loading'
+import { redirect, useLoaderData } from 'react-router-dom'
+
+export const loader = async () => {
+  redirect('/')
+  return 'something'
+}
+
 const Login = () => {
+  const data = useLoaderData()
+  console.log(data)
+
+  const dispatch = useDispatch<AppDispatch>()
+  const { isLoading } = useSelector((state: IRootState) => state.auth)
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    const formData = new FormData(e.target as HTMLFormElement)
+    dispatch(login(formData))
+  }
+
+  if (isLoading) return <Loading />
+
   return (
     <>
       <section className='flex flex-col justify-center items-center mx-auto px-4 md:px-12 max-w-7xl h-[calc(100vh-theme(space.16))]'>
         <h2 className='mt-0 mb-8 font-bold text-center'>Login</h2>
-        <form action='' className='w-[90vw] max-w-4xl'>
-          <div className='form-row'>
-            <label
-              htmlFor='username'
-              className='block mb-4 text-sm tracking-wide'
-            >
-              Username
-            </label>
-            <input
-              type='text'
-              id='username'
-              name='username'
-              className='block border-white focus:border-white bg-transparent shadow-sm p-2 border border-solid rounded-md focus:ring-white w-full sm:text-sm outline outline-none'
-            />
-          </div>
-          <div className='form-row'>
-            <label
-              htmlFor='password'
-              className='block mb-4 text-sm tracking-wide'
-            >
-              Password
-            </label>
-            <input
-              type='password'
-              id='password'
-              name='password'
-              autoComplete='on'
-              className='block border-white focus:border-white bg-transparent shadow-sm p-2 border border-solid rounded-md focus:ring-white w-full sm:text-sm outline outline-none'
-            />
-          </div>
-          <button className='block bg-rose-500 p-2 rounded-md w-full font-bold text-white'>
+        <form onSubmit={handleSubmit} action='' className='w-[90vw] max-w-4xl'>
+          <InputFormRow
+            type='text'
+            text='Username'
+            name='username'
+            required={true}
+          />
+          <InputFormRow
+            type='password'
+            text='Your Password'
+            name='password'
+            required={true}
+          />
+          <button className='block bg-emerald-500 mt-10 p-2 rounded-md w-full font-bold text-white'>
             Login
           </button>
         </form>

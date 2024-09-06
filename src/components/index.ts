@@ -38,6 +38,9 @@ import Navbar from './Navbar'
 import Skills from './Skills'
 import FeaturedProjects from './FeaturedProjects'
 import Footer from './Footer'
+import InputFormRow from './InputFormRow'
+import SelectTag from './SelectTag'
+import FeaturedProjectTag from './FeaturedProjectTag'
 
 export {
   Windows,
@@ -77,4 +80,7 @@ export {
   Skills,
   FeaturedProjects,
   Footer,
+  InputFormRow,
+  SelectTag,
+  FeaturedProjectTag,
 }
