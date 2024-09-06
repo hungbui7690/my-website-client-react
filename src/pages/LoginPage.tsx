@@ -3,25 +3,25 @@ import { useDispatch, useSelector } from 'react-redux'
 import { login } from '../features/auth/authThunk'
 import { AppDispatch, IRootState } from '../store'
 import Loading from '../components/Loading'
-import { redirect, useLoaderData } from 'react-router-dom'
-
-export const loader = async () => {
-  redirect('/')
-  return 'something'
-}
+import { useNavigate } from 'react-router-dom'
+import { useEffect } from 'react'
 
 const Login = () => {
-  const data = useLoaderData()
-  console.log(data)
+  const navigate = useNavigate()
 
   const dispatch = useDispatch<AppDispatch>()
-  const { isLoading } = useSelector((state: IRootState) => state.auth)
+  const { isLoading, username } = useSelector((state: IRootState) => state.auth)
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const formData = new FormData(e.target as HTMLFormElement)
     dispatch(login(formData))
+    navigate('/')
   }
+
+  useEffect(() => {
+    if (username) navigate('/')
+  }, [navigate, username])
 
   if (isLoading) return <Loading />
 
