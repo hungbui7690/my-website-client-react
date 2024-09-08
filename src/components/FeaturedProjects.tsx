@@ -11,6 +11,7 @@ type PostType = {
   title: string
   url: string
   _id: string
+  featured: boolean
 }
 
 const FeaturedProjects = () => {

@@ -2,7 +2,6 @@ import { useEffect } from 'react'
 import { useGlobalContext } from '../App'
 import { InputFormRow, Tag } from '../components'
 import { createTag } from '../utils/tag'
-import { useNavigate } from 'react-router-dom'
 import { axiosInstance } from '../utils/axios'
 import { useQuery } from '@tanstack/react-query'
 import Loading from '../components/Loading'
@@ -15,7 +14,6 @@ interface ITag {
 
 const AddTag = () => {
   const { setIsOpen } = useGlobalContext()
-  const navigate = useNavigate()
 
   useEffect(() => {
     setIsOpen(false)
