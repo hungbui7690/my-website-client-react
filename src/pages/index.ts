@@ -1,6 +1,6 @@
 import AddProjectPage from './AddProjectPage'
 import AddTagPage from './AddTagPage'
-import ErrorPage from './ErrorPage'
+import NotFoundPage from './NotFoundPage'
 import SharedLayout from './SharedLayout'
 import LoginPage from './LoginPage'
 import ProjectsPage from './ProjectsPage'
@@ -11,7 +11,7 @@ export {
   SharedLayout,
   AddProjectPage,
   ProjectsPage,
-  ErrorPage,
+  NotFoundPage,
   AddTagPage,
   LoginPage,
   LandingPage,

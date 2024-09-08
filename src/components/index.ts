@@ -41,6 +41,8 @@ import Footer from './Footer'
 import InputFormRow from './InputFormRow'
 import SelectTag from './SelectTag'
 import FeaturedProjectTag from './FeaturedProjectTag'
+import Tag from './Tag'
+import ToggleSwitch from './ToggleSwitch'
 
 export {
   Windows,
@@ -83,4 +85,6 @@ export {
   InputFormRow,
   SelectTag,
   FeaturedProjectTag,
+  Tag,
+  ToggleSwitch,
 }

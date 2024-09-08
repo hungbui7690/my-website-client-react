@@ -1,5 +1,4 @@
 import SelectTagTopLeft from './SelectTagTopLeft'
-import SelectTagTopRight from './SelectTagTopRight'
 import SelectTagBottom from './SelectTagBottom'
 
 const SelectTag = () => {
@@ -14,12 +13,12 @@ const SelectTag = () => {
           <div className='flex flex-col items-center'>
             {/* Top */}
             <div className='w-full'>
-              <div className='flex border-gray-200 bg-white my-2 p-1 border rounded'>
+              <div className='flex justify-between border-gray-500 my-2 p-1 border rounded min-h-8'>
                 {/* Top Left - Cyan with X */}
                 <SelectTagTopLeft />
 
                 {/* Top Right - Chevron */}
-                <SelectTagTopRight />
+                {/* <SelectTagTopRight /> */}
               </div>
             </div>
 

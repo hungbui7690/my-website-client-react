@@ -5,9 +5,16 @@ import { AppDispatch, IRootState } from '../store'
 import Loading from '../components/Loading'
 import { useNavigate } from 'react-router-dom'
 import { useEffect } from 'react'
+import { useGlobalContext } from '../App'
 
 const Login = () => {
   const navigate = useNavigate()
+  const { setIsOpen } = useGlobalContext()
+
+  useEffect(() => {
+    setIsOpen(false)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   const dispatch = useDispatch<AppDispatch>()
   const { isLoading, username } = useSelector((state: IRootState) => state.auth)
@@ -35,12 +42,14 @@ const Login = () => {
             text='Username'
             name='username'
             required={true}
+            defaultValue='admin'
           />
           <InputFormRow
             type='password'
             text='Your Password'
             name='password'
             required={true}
+            defaultValue='2e7etrEp@001'
           />
           <button className='block bg-emerald-500 mt-10 p-2 rounded-md w-full font-bold text-white'>
             Login

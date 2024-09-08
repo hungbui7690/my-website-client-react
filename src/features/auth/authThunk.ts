@@ -10,6 +10,7 @@ export const login = createAsyncThunk(
         '/auth/login',
         formData
       )
+
       return res.data
     } catch (error) {
       if (error instanceof Error) {

@@ -1,7 +1,7 @@
 import NotFoundImage from '../images/404.svg'
 import { Link } from 'react-router-dom'
 
-const ErrorPage = () => {
+const NotFoundPage = () => {
   return (
     <section className='mx-auto w-[80vw] h-[80vh] text-center'>
       <img src={NotFoundImage} alt='404 image' className='w-full h-full' />
@@ -14,4 +14,4 @@ const ErrorPage = () => {
   )
 }
 
-export default ErrorPage
+export default NotFoundPage

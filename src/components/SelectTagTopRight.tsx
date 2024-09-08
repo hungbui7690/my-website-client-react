@@ -1,6 +1,6 @@
 const SelectTagTopRight = () => {
   return (
-    <div className='flex items-center border-gray-200 py-1 pr-1 pl-2 border-l w-8 text-gray-300'>
+    <div className='flex items-center border-gray-500 py-1 pr-1 pl-2 border-l w-8 text-gray-300'>
       <button className='w-6 h-6 text-gray-600 cursor-pointer outline-none focus:outline-none'>
         <svg
           xmlns='http://www.w3.org/2000/svg'

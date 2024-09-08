@@ -4,8 +4,7 @@ interface IInputFormRow {
   name: string
   placeholder?: string
   required?: boolean
-  // value?: string
-  // handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+  defaultValue?: string
 }
 
 const InputFormRow = ({
@@ -14,6 +13,7 @@ const InputFormRow = ({
   name,
   placeholder,
   required,
+  defaultValue,
 }: IInputFormRow) => {
   return (
     <div className='form-row mt-6'>
@@ -24,19 +24,21 @@ const InputFormRow = ({
         <input
           type={type}
           id={name}
+          defaultValue={defaultValue}
           name={name}
           placeholder={placeholder}
           autoComplete={`${type === 'password'}`}
           required={required}
-          className='block border-white focus:border-white bg-transparent shadow-sm p-2 border border-solid rounded-md focus:ring-white w-full sm:text-sm outline outline-none'
+          className='block border-gray-500 focus:border-gray-300 bg-transparent shadow-sm p-2 border border-solid rounded-md focus:ring-white w-full sm:text-sm outline outline-none'
         />
       ) : (
         <textarea
           name={name}
           id={name}
           placeholder={placeholder}
-          rows={5}
-          className='block border-white focus:border-white bg-transparent shadow-sm p-2 border border-solid rounded-md focus:ring-white w-full sm:text-sm outline outline-none'
+          defaultValue={defaultValue}
+          rows={3}
+          className='block border-gray-500 focus:border-gray-300 bg-transparent shadow-sm p-2 border border-solid rounded-md focus:ring-white w-full sm:text-sm outline outline-none'
         ></textarea>
       )}
     </div>

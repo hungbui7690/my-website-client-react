@@ -1,7 +1,16 @@
+import { useEffect } from 'react'
+import { useGlobalContext } from '../App'
 import { InputFormRow } from '../components'
 import ContactImage from '../images/contact-1.svg'
 
 const ContactPage = () => {
+  const { setIsOpen } = useGlobalContext()
+
+  useEffect(() => {
+    setIsOpen(false)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
   return (
     <>
       <h2 className='my-10 font-bold text-center'>Contact</h2>

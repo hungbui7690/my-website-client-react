@@ -32,5 +32,11 @@ export default {
     },
     extend: {},
   },
+  safelist: [
+    {
+      pattern:
+        /(bg|border|text)-(slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose)-(100|300|700)/,
+    },
+  ],
   plugins: [],
 }
