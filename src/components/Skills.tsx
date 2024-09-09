@@ -18,7 +18,7 @@ import {
   Elysia,
   NextJS,
   Docker,
-  Kubernetes,
+  // Kubernetes,
   GithubAction,
   MongoDB,
   Postgres,
@@ -181,13 +181,13 @@ const Skills = () => {
                 alt='docker'
               />
             </div>
-            <div className='skill'>
+            {/* <div className='skill'>
               <img
                 className='w-10 sm:w-14 object-cover'
                 src={Kubernetes}
                 alt='kubernetes'
               />
-            </div>
+            </div> */}
             <div className='skill'>
               <img
                 className='w-10 sm:w-14 object-cover'
