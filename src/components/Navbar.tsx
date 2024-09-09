@@ -64,11 +64,7 @@ const Navbar = () => {
           <Link to='/contact'>
             <li className='hover:text-emerald-600 cursor-pointer'>Contact</li>
           </Link>
-          {!username ? (
-            <Link to='/login'>
-              <li className='hover:text-emerald-600 cursor-pointer'>Login</li>
-            </Link>
-          ) : (
+          {username && (
             <button onClick={handleLogout}>
               <li className='hover:text-emerald-600 cursor-pointer'>Logout</li>
             </button>
@@ -105,11 +101,7 @@ const Navbar = () => {
                 </Link>
               </>
             )}
-            {!username ? (
-              <Link to='/login'>
-                <li className='hover:text-emerald-600 cursor-pointer'>Login</li>
-              </Link>
-            ) : (
+            {username && (
               <button onClick={handleLogout}>
                 <li className='hover:text-emerald-600 cursor-pointer'>
                   Logout

@@ -58,36 +58,11 @@ const AddProject = () => {
       <section className='flex flex-col justify-center items-center mx-auto mt-8 px-4 md:px-12 max-w-7xl'>
         <h2 className='mt-0 mb-8 font-bold text-center'>Add Project</h2>
         <form onSubmit={handleSubmit} className='w-[90vw] max-w-4xl'>
-          <InputFormRow
-            type='text'
-            text='Title'
-            name='title'
-            defaultValue='title'
-          />
-          <InputFormRow
-            type='textarea'
-            text='Description'
-            name='description'
-            defaultValue='description test'
-          />
-          <InputFormRow
-            type='textarea'
-            text='Content'
-            name='content'
-            defaultValue='content test'
-          />
-          <InputFormRow
-            type='text'
-            text='Github URL'
-            name='github'
-            defaultValue='https://github.com/hungbui7690/nodejs-tutorials'
-          />
-          <InputFormRow
-            type='text'
-            text='URL'
-            name='url'
-            defaultValue='https://github.com/hungbui7690/nodejs-tutorials'
-          />
+          <InputFormRow type='text' text='Title' name='title' />
+          <InputFormRow type='textarea' text='Description' name='description' />
+          <InputFormRow type='textarea' text='Content' name='content' />
+          <InputFormRow type='text' text='Github URL' name='github' />
+          <InputFormRow type='text' text='URL' name='url' />
 
           {/* # File Upload */}
           <div className='form-row mt-6'>

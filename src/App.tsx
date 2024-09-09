@@ -10,6 +10,8 @@ import {
   LandingPage,
 } from './pages'
 import { createContext, useContext, useState } from 'react'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 const router = createBrowserRouter([
   {
@@ -80,6 +82,7 @@ function App() {
       value={{ tagID, setTagID, tagName, setTagName, isOpen, setIsOpen }}
     >
       <RouterProvider router={router} />
+      <ToastContainer autoClose={3000} />
     </AppProviderContext.Provider>
   )
 }
